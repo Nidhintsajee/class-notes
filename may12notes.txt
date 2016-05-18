@@ -1,0 +1,13 @@
+date-to display date
+>-standard output redirection
+meta character-*
+|-pipe with single step
+cmd1|cmd2
+eg:ps ax|grep bioset|wc -l -->multi stage pipeline
+ulimit -a -important system limits
+unix -->1970 AT&T bell tabs
+freebsd-bsd-berkely software
+openbsd,netbsd
+sun->solaris
+unix shell-video
+quoting ->supress meta character expansion

@@ -1,0 +1,3 @@
+Don't use GUI, use commands - learn "vim" editor - commands  like uname, lsusb, lscpu, lsb_release, ls -l, file, cat.
+
+Navigating the file system - root directory - /bin - /dev  (device files - char special, block special, 'c', 'b' etc)

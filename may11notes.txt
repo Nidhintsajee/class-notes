@@ -1,0 +1,16 @@
+dev-character ,block ,access periferals.
+less passwd-information regarding users
+root user-super user,full control of machine.
+less hots,loopback
+etc-configuration files,for control system
+so-shared object file
+lib c.so-standard c library,machine code file of c file.
+less cpuinfo-cpu information
+proc-process directory
+bin-machine code usually executed
+sbin-contain machine code only by user
+tmp-temporary files
+usr-user /-root
+include-header files
+src-source .c-c code .h-header files
+pwd-present working directory
