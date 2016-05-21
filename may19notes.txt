@@ -1,0 +1,18 @@
+nano,gedit->casual editing 
+emacs->more complex
+language of unix shell:
+eg1:
+	while true  
+	do 
+		 echo hello
+	done            
+eg2:	
+	main()
+	{
+		return 10;  -->captuared by unix shell.
+	}
+value in return back from main exit status of program.
+->shell interprets 0 as TRUE and 1 as FALSE.
+while cmd->takes as a program, run that program.
+successfully executed commands have exit status 0,other wise 1.
+/dev/null-> it vanishes datas ideal location.

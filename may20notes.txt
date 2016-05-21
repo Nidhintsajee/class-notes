@@ -1,0 +1,20 @@
+Shell is for useful purpose.
+ping ->for checking connectivity.
+ifconfig ->kind of information regarding networking interfaces 
+available in system.
+loopback interface -> used for testing programmes,running programmes.
+127.0.0.1 ->IP address of loopback interface.
+eg:	if(ifconfig|grep wlx >/dev/null)
+	then
+		echo'wifi intreface is ready'
+	else 
+		echo'wifi interface is not ready'
+	fi
+shell manages progrmmes and files etc.
+back quotes ` `.
+eg 1: test 1 -eq 1  -->eq means equal.it uses conditional statments.
+echo $? -->generates exit status 0->true.
+eg 2:expr 1 '+' 2
+->3
+python uses indentation, but not shell script.
+

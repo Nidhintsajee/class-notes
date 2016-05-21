@@ -1,0 +1,22 @@
+Shell scripting
+---------------
+meta character - *
+quating suppresses meta character expansion->',",\  "->not expanding
+command line interpreter
+Path--> echo $PATH ->colon seperated list directories
+internal/external commands: internal ->echo,pwd,cd ->built-in
+external->some executable file load and run then commands work.
+How shell do execution of commands?
+a)checks whether it is an internal commands
+b)shell looks up the folder given in path
+set path-> PATH=/bin:/usr/bin:/sbin:/usr/sbin 
+features of shell ->it has a sort of dual personality.
+->it has to behave as a command interpreter as well as programming language.
+->white space is significant 
+. is not included in path. to include in path-> PATH=$PATH:. 
+in login directory a file called .bashrc
+script is executed by subshell-> so when you run exit,you are exactly 
+exiting from the sub shell only.parent shell is still running in memmory.
+source is used to perform parent directory,to source a script.
+shell->generic name a family of programs.
+bash,csh,ksh,ash..etc.bash->bourne again shell.
