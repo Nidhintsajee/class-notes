@@ -1,0 +1,29 @@
+* du --> disk usage,know space consumed by each folder.
+
+* rust is used to replacement for c,c++.
+
+* cc -v shows version info.
+
+--------------------------------
+|Complex 4 stages for compile c|
+--------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+|														        |
+| First stage : Preprocessing -> macro expansion max.								        |
+|														        |
+| Second stage: Compilation proper.s -> assembly code which is generated from source c code.Its the most complex stage. |
+|														        |
+| Third stage : converts the assembly code to machine code with the help of assembler.				        |
+|														        |
+| Fourth stage: all the processes are done and we get the complete file a.out which can run a c code.		        |
+|														        |
+-------------------------------------------------------------------------------------------------------------------------
+
+* GNU compiler is an optimising compiler.it accepts a c source code and generate an assembly language code from it.
+
+  optimization is incredibly complex. graph theory is used to solve optimization problems.
+
+* Its also a retargetable compiler. anybody can quite easily generate modifications GNU compiler to produce an 
+
+  assembly code running on a new architecture.
+

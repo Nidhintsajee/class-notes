@@ -1,0 +1,43 @@
+                                                --------------------
+		           			|     Phython      | 
+                                                ====================
+
+* Python is a dynamically typed high level language but c,c++,java are statically typed language.
+
+* Guido von rossum a dutch programer,who found phython language. It is a general purpose language.
+
+* Although python is an easy-to-learn language for beginners, its has got some drawbacks.
+
+* Dynamic langauges are prone to run time errors which can be very annoying for bigger proggrams. 
+
+* It uses except very low level and highly peformance intensive programs.
+
+* Python can be used anywhere except very low level languages.
+
+* Python has REPL  - read,evaluate,print,loop. Concise coding, lesser no.of codes.
+
+* Indentation is VERY IMPORTANT in python language.
+
+---------------------------------------
+|  Compilation & Execution of python  |
+---------------------------------------
+
+Python code execution is a two step proccess:
+
+          -> compilation to byte code
+
+          -> byte code interpretation
+
+* First the code is checked for syntax errors, if no error is found, the code is converted to byte code(virtual machine code).
+
+this byte code is for the virtual CPU to understand.
+
+* Then the byte code interpretation is done. 
+
+VIRTUAL MACHINE ??
+-----------------
+* Python language defines an abstract machine.
+
+* Hypothetical CPU
+
+Inertia -> new code you write will have to interct with old code.

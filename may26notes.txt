@@ -1,0 +1,48 @@
+ Data structure
+ --------------
+* Mutable or Immutable.
+
+* Compilers are language translators ie, it takes language 'x' and converts it to language 'y' . 
+
+* Interpretors are language evaluators.
+
+* Python strings are immutable ie, no changes can be made to a string once stored.
+
+* Lists in python are mutable . lists are general purpose containers, very flexible and some interesting and 
+
+  useful changes can be made to it.
+
+* dir() - built-in function, show all function or methods.
+
+* help() - to help in built-in functions.
+
+* Python3 is a more advanced form of python2 in many aspects.
+
+* Pyhton string : >> a = 'hello'
+                  >> print(a)
+                  >> hello
+
+* In list there is a function called range() to print numbers given in the given range. 
+  
+  although this is a good feature,it takes up a lot of memory.
+
+* Many operations such as slicing,insertion,appending,deleting,replacing ... etc can be done to  list.
+
+* When we type a list ::  a = [1,2,3]  and 'a' = 'b', the list is not duplicated, a & b are reference points to the 
+  
+  same list [1,2,3] in memory. 
+						memory
+
+							2000
+						-------------------
+						1 2 3 
+		3000(a)				-------------------
+	----------------------
+	2000
+	----------------------
+							4000(b)
+						-------------------
+						2000
+						-------------------
+
+* 'a' and 'b' are ALIASES to the same list in memory.
