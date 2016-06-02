@@ -1,0 +1,60 @@
+* When we want immutable data structures not to be changed , why done have provision to over write it??
+
+Program starts out with a set of values at time 0.
+
+compute new values
+-----------------
+a data structure is immutable. a=(1,2,3,4) -> it doesn't change.
+
+we want to compute new values a=(1,2,3,4)
+
+a=[1,2,3,4] in sets 2 in a -> true
+
+"Performance" Engineering actitvity
+a) correctness
+b) permanent
+
+memory, time consumes. a=[1,2,3,10,20,40] -> search for 40 "in"
+
+time proportional to N
+
+N=1000,time=1us
+N=2000,time=2us
+
+time is O(n) -> proportional to N. big O notation.
+
+O(N**2) proportional to N**2
+
+N=1000,time=1us
+N=2000,time=4us
+
+Sorting on alist of 1000 elements bubble sort -> O(N**20). time complexity of order of N**2 -> O(N**2)
+
+O(logN) || O(1) -> constant time
+
+N=1000,time=1us
+N=2000,time=1us
+
+O(1) is far better than O(N). table lookup which you should do very fast.
+
+usec -> Micro second. Tuple also has O(N) for  membership testing.
+
+set membership testing is O(1).
+
+constant time algorithm when, how??
+ans: The magic hashing.
+
+set is implemnted internally as a data struture called hash table.
+
+------------------------------------
+|Dictionary lookup takes time O(1) |
+|Set membership takes time O(1)    |
+|List membership / tuple O(N)      |
+|as a set and NOT a list.          |
+------------------------------------
+
+programing engineering dealing with small inputs.
+
+huge amount of data, big data.
+
+

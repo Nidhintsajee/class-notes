@@ -1,0 +1,51 @@
+---------------------------
+|  MUTABLITY|IMMUTABLITY  |
+---------------------------
+Pure functional languages:haskell -> all the data structures are immutable.
+
+python,perl -> Mixture of mutable and immutable data.
+
+Mutablity is conjuction with aliasing makes it hard to reason about th behaviour of your probgram.
+
+performance, time, memmory. performance problem.
+
+immutable is good, easy to reason about your program.
+
+immutablity is bad, because it creates performance issues.
+
+Haskell: immutable, through the use of very sophisticated persistant data structues.
+
+c -> everything is mutable. eg:const int a;
+
+tuple is mutable
+----------------
+a(1) -> type(a) -> <type'int'>
+
+a(1,) -> type(a) -> <type'tuple'>
+
+tuple unpacking->eg: a={1,2,3}  ||  p,q,r=a || p=1,q=2,r=3
+
+it usually used for swap programs. eg: a,b = b,a
+
+Set is mutable
+--------------
+eg: a={1,2,3,2,1} -> a -> set([1,2,3])
+
+eliminate duplicate set(a).
+
+set([]) to create empty set.
+
+"in" -> is used for check membership.
+
+| -> Union , & -> Intersection , - -> diffrence, ^ -> symmetric diffrence.
+
+a = set("hello") || a -> set(['h','e','l','o'])
+
+count() -> count no.of items. type() -> int,long,float,str.
+
+split() -> split strings. join() -> to concat.
+
+strip() -> remove whitespace. %d -> for print no.
+
+\ -> escaping. \n -> new line. ord() ->ASCII value.
+

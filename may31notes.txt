@@ -1,0 +1,44 @@
+-> slice is mutable
+
+sort() -> mutated | sorted() -> immutated
+
+pythonic style
+-------------
+repetition while loop | for loop python 
+
+a) list comprehension
+
+b) for loop
+
+c) while loop
+
+unpacking - tuple eg: a,b=(1,2)
+
+nested comprehension -> eg: t=((u,v) for u in a for v in a)
+
+Dictionary -> eg: a={'abc':10,'def':20}
+----------
+Other names of Dictionary are associative array,map,hash. key value pairs are called as Dictionary.
+
+Features of Dictionary
+----------------------
+-> to store structured data in program.
+
+-> dictionaries are mutable.
+
+-> no ordering, unorderd collections.
+
+-> lookup a value.
+
+-> keys of dict(possible): int,string,tuple -> immutable.
+
+-> not possible: list,dict -> mutable.
+
+tuple is mutable.items() return tuple.
+
+get() -> if k in D,else d.default to None. eg: D.get(k[,d]
+
+setdefault() -> also get D[k]=d. if k not in D. eg: D.setdefault(k[,d]) -> D.get(k,d)
+
+has_key() -> True if D has akey k,else False. eg:D.has_key(k)
+
