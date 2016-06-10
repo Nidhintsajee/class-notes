@@ -1,6 +1,23 @@
 ssh -> for remote logging
+
 find /-name filename -> search for file.
+
 inode -> index node
+
 disk -> size, date, permkissions, datablock addresses except filename.
+
 when we copy a file using cp command inode changes, because it create new file.
-but using ln(link) command inode does'nt changes, it only create a refernce.when you create ln you are simply creating a new 
+
+but using ln(link) command inode does'nt changes, it only create a refernce.
+
+when you create ln you are simply creating a new directory entry. 
+
+no data is copied. no change when moving/rename inode.
+
+grep :egrep, fgrep, egrep : extended grep
+
+daemon -> running in background. cron- shedule.
+
+pid -> process id
+
+pid 1 -> init
