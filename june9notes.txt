@@ -2,10 +2,13 @@ Memory mangement in python
 --------------------------
 Biggest convienience offered by very high level languages, automatic memory management.
 
-allocation is performed automatically whenever requiered.
+allocation is performed automatically whenever required.
 
 eg: int *a; 
 a=malloc(100);
 a=malloc(200);
--> not reuse, not access, not free.
+-> not reuse, not access, not free."garbage" is occured. memory leak occcured.
+Python is doing automatically memory management, through a simple technique called refernce counting.
+reference counting
+-------------------
 
