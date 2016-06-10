@@ -26,7 +26,7 @@ void fun()
         exit(1);
     }
 
-    free(p);/*here */
+    free(p);/*here function free is called for freeing memory,to avoid memory leak*/
 }
 
 main()
