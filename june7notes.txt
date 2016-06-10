@@ -9,6 +9,9 @@ p=malloc(100) -> allocate memory
 free(p) -> free memory
 
 C program manages memory by calling malloc and free.
+
+C pgm1:
+
 #include <stdlib.h>
 #define LEN 10000
 
@@ -32,6 +35,31 @@ main()
 
     while(1) {
         fun();
+    }
+
+    
+}
+C pgm2:
+
+#include <stdlib.h>
+#define LEN 10000
+
+void fun()
+{
+    char *p;
+
+    p = malloc(LEN);
+    if(p == 0) {
+        perror("malloc failed");
+        exit(1);
+    }
+}
+
+main()
+{
+    while(1) {
+        fun();
+        usleep(10); /* slow down the loop a little bit */
     }
 
     
