@@ -65,5 +65,8 @@ main()
 
     
 }
+C program is manual memory management, explicitly allocate and deallocate memory.
+
+memory allocate and forget to free and call free functon more than once are the 2 situations bugs were occured.
 
 python, java, perl, ruby, lisp are automatic memory management.
