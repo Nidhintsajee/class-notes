@@ -7,8 +7,19 @@ allocation is performed automatically whenever required.
 eg: int *a; 
 a=malloc(100);
 a=malloc(200);
+
 -> not reuse, not access, not free."garbage" is occured. memory leak occcured.
+
 Python is doing automatically memory management, through a simple technique called refernce counting.
+
 reference counting
 -------------------
-
+a=[1,2,3]
+                                2000
+                                ----------
+                                1 2 3 | 1  -> refernce count
+                                ----------
+a
+--------
+2000
+--------
