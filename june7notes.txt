@@ -26,7 +26,7 @@ void fun()
         exit(1);
     }
 
-    free(p);
+    free(p);/*here */
 }
 
 main()
