@@ -1,0 +1,1 @@
+python, java, perl, ruby, lisp are automatic memory management.
