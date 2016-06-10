@@ -8,5 +8,33 @@ p=malloc(100) -> allocate memory
 
 free(p) -> free memory
 
-C 
+C program manages memory by calling malloc and free.
+#include <stdlib.h>
+#define LEN 10000
+
+void fun()
+{
+    char *p;
+
+    p = malloc(LEN);
+    
+    if(p == 0) {
+        perror("malloc failed");
+        exit(1);
+    }
+
+    free(p);
+}
+
+main()
+{
+    /* call "fun" in an infinite loop */
+
+    while(1) {
+        fun();
+    }
+
+    
+}
+
 python, java, perl, ruby, lisp are automatic memory management.
