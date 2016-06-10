@@ -42,8 +42,24 @@ a.append(a)
 a -> [1,2,3,[1,2,3]]
                               2000
                               ---------------
-                              1 2 3 2000| 1
+                              1 2 3 2000 | 2
+                              ---------------
 a
 ---------------
 2000
 ---------------
+
+Cyclical data structure, self referntial data structure.
+
+if a=X  ,then refcount increment 1  , X is any value.
+
+                              2000
+                              ---------------
+                              1 2 3 2000 | 1
+                              ---------------
+here "unreachable" occured. limitation of ref-counting based on auto memory management scheme.
+more elaboarte "garbage collection mechanisms".
+once in a while : unpredictable
+"GC pause" -> GC- Garbage Collection
+handreads of milli seconds. such delays may be unpredictable in certain situations.
+real time :games,high frequency trading c++,java
