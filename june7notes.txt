@@ -53,6 +53,7 @@ void fun()
         perror("malloc failed");
         exit(1);
     }
+/*here free call is missing,so here memory leak occured.eatup all available memory*/
 }
 
 main()
