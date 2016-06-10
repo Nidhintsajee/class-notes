@@ -1,1 +1,5 @@
+Memory mangement in python
+--------------------------
+Biggest convienience offered by very high level languages, automatic memory management.
 
+allocation is performed automatically whenever requiered.
