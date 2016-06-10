@@ -1,4 +1,12 @@
 Time complexity -> Relate the running time of your program with the size of the input.
+
 Big O notation, time complexity O(n). Time taken is proportional to N.
 
+Memory management in C program
+------------------------------
+p=malloc(100) -> allocate memory
+
+free(p) -> free memory
+
+C 
 python, java, perl, ruby, lisp are automatic memory management.
