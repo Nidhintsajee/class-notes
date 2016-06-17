@@ -1,1 +1,71 @@
+functions
+----------
+default parameter : add(a,b=1)
+
+def fun(a,*b) -> variable arg functions, * any no.of arguements.
+
+python supported named arguement -> paint(thickness=10, color='red')
+
+def fun(a,**b) as dict
+
+10{'y':2,'x':3}
+
+def fun()
+        print 'hello world'
+x=fun()
+print x -> None
+
+def fun()
+        return
+        print 'hello' ->dead code
+x=fun()
+print x -> None
+
+def fun(a,b,c)
+        a=[1,2,3]
+fun(*a) -> automatically unpacked, unpacking list/tuple when you pass as a parameter to a function.
+
+scope
+----
+a=[1,2,3,4]; fun(a)
+x.append(10)
+                        2000
+                        ----------
+                        1 2 3 4 10
+                        ----------
+a(3000)
+-------
+2000
+-------
+
+-----------------------------------------
+                scope of function
+x(4000)
+-------
+2000
+-------
+
++++++++++++++++++++++++++++++++++++++++++
+
+a(3000)
+-------
+2000
+-------                 2000
+                        -------
+                        1 2 3 4
+                        -------
+
+----------------------------------------
+                scope of function
+
+a(4000)
+-------
+2000
+-------                 5000
+                        --------
+                        10 2 3 4
+                        --------
+
+++++++++++++++++++++++++++++++++++++++++
+
 
