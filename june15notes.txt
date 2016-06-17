@@ -1,1 +1,88 @@
+f=open('a.txt')
+s=f.read() -> read whole file
+print type(s) ->type of file
+print s ->print whole file
+
+when 2 times call read() empty file.
+
+f.readLine() ->for read first line,line by line.
+
+f.readLines() ->for print all lines.
+
+f is an "iterable".
+
+any object can be used in a for loop.
+
+for x in f
+  print x
+  --------
+  -------
+
+f=open("b.txt",'w')
+
+f.write('hello world') -> over written
+
+f=open("b.txt",'a')
+
+f.write('hello world') -> append
+
+random access data structure
+
+a=[10,"aa",20,78) , a[0],a[1],a[2],...
+
+file not meant for random access, process the file sequence from beginning.
+
+-The method lseek() sets the current position of file descriptor fd to the given position pos,
+
+modified by how. syntax: os.lseek(fd, pos, how)
+
+Parameters
+
+fd -- This is the file descriptor, which needs to be processed.
+
+fd -- This is the file descriptor, which needs to be processed.
+
+pos -- This is the position in the file with respect to given parameter how. You give os.SEEK_SET or 0 to
+
+set the position relative to the beginning of the file, os.SEEK_CUR or 1 to set it relative to the current
+
+position; os.SEEK_END or 2 to set it relative to the end of the file.
+
+how -- This is the reference point with-in the file. os.SEEK_SET or 0 means beginning of the file,
+
+os.SEEK_CUR or 1 means the current position and os.SEEK_END or 2 means end of the file.
+
+-The method seek() sets the file's current position at the offset.
+
+syntax for seek() method −fileObject.seek(offset[, whence])
+
+Parameters
+
+offset -- This is the position of the read/write pointer within the file.
+
+whence -- This is optional and defaults to 0 which means absolute file positioning,
+other values are 1 which means seek relative to the current position and 2 means seek relative to the
+file's end.
+
+This method does not return any value.
+
+f.writeLines(['a\n.....'])
+
+strip() -> remove whitespaces and \n
+
+word cout
+--------
+f=open('d.txt')
+w={}
+for word in f
+        r=word.strip()
+        if r in w
+        w[r]+=1
+        else
+        w[r]=1
+fuctions
+--------
+def sqr(x)
+        return x*x
+
 
