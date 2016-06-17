@@ -1,10 +1,44 @@
-ssh -> for remote logging
+part1 - test discussion
+-----
+-to remote login : ssh guest@ipaddress
 
-find /-name filename -> search for file.
+-to find a file : find / -name filename
 
-inode -> index node
+-to find name of the processor which is running on the system and to find how many cores does it have use
 
-disk -> size, date, permkissions, datablock addresses except filename.
+this commands less /proc/cpuinfo or lscpu.
+
+-to know kernel version running on this system use uname -a command.
+
+-to know % of disk space used by the root file system, to know name of the device mounted on / and to know
+
+how much swap memory is there on this system use df command.
+
+-to know total amount of RAM available on this system use free or htop commands.
+
+-to find inode number of the file use ls -i command.
+
+disk data layout
+----------------
+inode is a disk data structure which holds all information regarding a file except it's name. size of the
+
+file, date/time, ownership, permissions..
+
+a Directory
+-----------
+a disk data structure.which contains a list of files and inode numbers.
+
+disk: inode table :array of inodes/ sequence of inodes
+
+an inode number is simply an index into this array. it helps you to identify one particular inode.
+
+a)a.c ->12678
+
+b)indexes the inode table with this number and idntifies a unique "inode".
+
+c)inode tools: th address of data blocks of the file.
+
+d)os can access the blocks and read/write data.
 
 when we copy a file using cp command inode changes, because it create new file.
 
