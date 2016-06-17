@@ -1,1 +1,97 @@
+link count -> how many pointers are pointing to file.
 
+value v/s object identity
+-------------------------
+a=[1,2,3] ,  b=[1,2,3]
+
+print a==b  -> value identity
+
+true
+
+print a is b
+
+false
+
+a and b are pointing to two distinct lists when happen to have the same content.
+
+object identity-> == is weaker form of comparison. a and b are pointing to same object in memory.
+
+"is" -> object identity.
+
+a=[1,2,3]       ,       b=[1,2,3]
+
+ id(a)                  id(b)
+
+140574163891840         140574163893136
+
+if id(a) not equal to id(b), that means a and b are not pointing to same object in memory.
+
+a=[1,2,3]       ,        b=[:]
+
+id(a)                   id(b)
+
+140574163970816         140574163891840 -> diffrent in id's
+
+a=[1,[2,3,4]]
+
+b=a[:] -> shallow copy of list
+
+                        2000                            7000
+                        ------                          ------
+                        20 3 4                          2 3 4
+                        ------                          ------
+a
+-----                   4000
+4000                    ------
+-----                   1 2000                          deep copy
+                        ------
+
+b
+-----
+5000                    5000                            5000
+-----                   ------                          ------
+                        1 2000                          1 7000
+                        ------                          ------
+
+b[1][0]=20
+
+shallow copy ->only copy content in list.
+
+import math -> mathematical operations such as math.sin(0),math.cos(1)..etc.
+
+math:module or library
+import copy
+
+a=[1,[2,3,4]]
+
+b=copy.deepcopy(a)
+
+b -> [1,[2,3,4]]
+
+b[1][0]=20
+
+b->[1,[20,3,4]]
+
+a->[1,[2,3,4]]
+
+Pylint -> Quality Assurance tool,it helps you track down a few of the problems in python code.also checking
+python code for style issues.
+
+lint -> analyse  c code and spot issues.
+
+from math import *
+print sin(0)  -> it works
+
+import * is not a good idea, name clash occures.
+
+import math
+print dir(math) -> all fucntions in math
+
+a) #!/usr/bin/python -> absolute path name, top most in program
+
+b) execute permission
+
+then we can run python program like this : ./file.py
+
+import sys
+sys.argv -> command line arguements
