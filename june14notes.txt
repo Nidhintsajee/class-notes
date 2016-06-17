@@ -95,3 +95,4 @@ then we can run python program like this : ./file.py
 
 import sys
 sys.argv -> command line arguements
+ 
