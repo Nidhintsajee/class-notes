@@ -1,1 +1,138 @@
+Functions
+---------
+
+x=1
+
+x
+-----
+2000
+-----                   2000
+                        ---------
+                        1
+                        ---------
+
+fun(x)
+
+x=10
+
+-----------------------------------
+
+x
+-------
+3000
+-------                 3000
+                        ---------
+                        10
+                        ---------
+
+shadow :print x
+
+eg py:
+        x=10
+        def fun():
+            print x
+            x=20
+            print x
+
+        fun() -> a run time error generates, unbound local error.
+
+why this error?
+
+- "x" gets marked as a local variable within the byte code.
+so we can modify this :
+        x=10
+        def fun():
+            global x
+            print x
+            x=20
+            print x
+
+        fun()
+
+o/p -> 10 20
+
+in case of large programs in python there are so many functions fun1.fun2,fun3.. so be careful
+
+while setting global variables.
+
+sqr() -> function calling
+
+() -> function call operator
+
+when we call sqr only with out call operator there is no error, a message will displayed like this.
+
+<function sqr at 0x7f355c6a46e0>
+
+function name can assign to other names.functions are "first class" entities.
+
+a=sqr
+a() -> then call function with other names.
+
+b=[1,2,sqr]
+b[2]() -> call using tuple, dictionary also.
+
+def sqr(x):
+    return x*x
+
+sqr
+-------
+3000
+-------                         3000
+                        -----------------------
+                        xxxxxxxxxxxx(byte code)
+                       ------------------------                                          
+f
+------
+3000
+------
+
+g
+-------
+3000
+-------
+
+cube
+------
+7000
+------                          7000
+                        ------------------------
+                        yyyyyyyyyyyyy(byte code)
+                        ------------------------
+
+sqr=cube
+
+
+upper sqr changes to ->         sqr
+                                ---------
+                                7000
+                                ---------
+
+function pass as a parameter.
+
+hello
+-------
+3000
+-------                 3000
+                ----------------------
+                ccccccccccc(byte code)
+                ----------------------
+
+fun(hello)
+-----------------------------------------------
+f
+----------
+3000
+----------
+
+higher order functions -> functions taking other functions as parameter.
+
+def fun(f):
+    f()
+
+def hello():
+   print"hello world"
+
+fun(hello)
+
+o/p -> hello world
 
