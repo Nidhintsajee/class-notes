@@ -1,1 +1,111 @@
-june
+Functions
+=========
+>>def sqr(x): return x*x
+>>
+>>def cube(x): return x*x*x
+>>
+>>def compose(f,g,x): return f(g(x))
+>>
+>>compose(sqr,cube,2)
+>>64
+
+we can include 2 or more functions as arguements. we define it in top level, when we use global variables
+
+without using parameters, it creates dependency and it is not general.
+
+map
+---
+>>map(sqr,[1,2,3,4])
+>>[1,4,9,16]
+
+we can also do this using list comprehension.
+
+>>[x*x for x in [1,2,3,4]]
+>>[1,4,9,16]
+
+"Anonymous functions", "Lambdas", "Lambda Functions" -> it has no name
+
+lambda x:x*x -> it is not useful, when we bind it with variables, it is useful
+
+>>f=lambda x:x*x
+>>f(2)
+>>4
+>>
+>>map(lambda x:x*x,[1,2,3,4])
+>>[1,4,9,16]
+
+Define working of map function using my_map function:
+-----------------------------------------------------
+def my_map(f, xs):
+        r=[]
+        for x in xs:
+                r.append(f(x))
+       return r
+
+a=my_map(lamba x:x*x,[1,2,3,4])
+
+>>a
+>>[1,4,9,16]
+
+we can define working of map function using list comprehension also:
+--------------------------------------------------------------------
+def my_app2(f, xs):
+        return(f(x) for x in xs)
+filter
+------
+>>def even(x): return x%2==0
+>>even(2)
+>>True
+>>
+>>filter(even,[1,2,3,4])
+>>[2,4]
+
+we can define working of filter function using my_filter:
+--------------------------------------------------------
+def my_filter(f,xs):
+        r=[]
+        for x in xs:
+              if(f(x)):
+                  r.append(x)
+        return r
+
+a=my_filter(even,[1,2,3,4])
+
+>>a
+>>[2,4]
+
+reduce
+------
+>>def add(x,y): return x+y
+>>
+>>add(1,2)
+>>3
+>>
+>>reduce(add,[1,2,3,4])
+>>10
+
+it reduces list, general form of reduce function
+
+reduce(f,[x1,x2.x3,....xn])
+f(f(f(f(x1,x2),x3),x4),...xn)
+
+we can define working of reduce function using my_reduce:
+---------------------------------------------------------
+def my_reduce(f,xs):
+        r=0
+        for x in xs:
+                r=f(r,x)
+        return r
+
+a=my_reduce(add,[1,2,3,4])
+
+>>a
+>>10
+>>
+>>reduce(lambda x,y:x+y,[1,2,3,4])
+>>10
+
+reduce function works with tuples, strings also. map-reduce algorithm for google,hadoop.
+
+                                                                                                                          
+
