@@ -1,0 +1,119 @@
+Function continue...
+--------
+Python2 >>>map(lambda x:x*x,[1,2,3,4])
+        >>>[1,4,9,16] -> output list is printed.
+
+python3 >>>map(lambda x:x*x,[1,2,3,4])
+<map object at 0x7fdcd51982e8>  -> return a object.
+
+some problem with map?
+- large data sets, "one demand" computed lazily. not create new list.
+
+python3 >>>p=map(lambda x:x*x,[1,2,3,4])
+        >>>for x in p:
+        ---     print x
+        >>>1 4 9 16
+
+in python2 xrange() function is used to print range of values, it simply return object.
+
+python3 only one range(), it is same as xrange in python2.
+
+Closures
+--------
+def fun1():
+    def fun2():
+        print "fun2..."
+    fun2()
+
+>>>fun1()
+fun2...
+
+def fun1():
+    def fun2():
+        return 10
+    return fun2
+
+>>>a=fun1()
+>>>a()
+10
+fun2 has captured the values in its outer scope.
+
+def fun1():
+    x=10
+    def fun2():
+        print x
+    return fun2
+
+>>>a=fun1()
+>>>a()
+10
+
+def fun1(x):
+    def fun2():
+        print x
+    return fun2
+
+>>>a=fun2()
+>>>a()
+10
+
+def fun1(x):
+    def fun2(y):
+        return x+y
+    return fun2
+
+>>>a=fun1(10)
+>>>a(20)
+30
+
+>>>def add(x,y): return x+y
+>>>add(10,20)
+30
+
+>>>def add(x): return lambda y:x+y
+>>>add(10)(20)
+30
+
+def add(x):
+    def add2(y):
+        return x+y
+    return add2
+
+>>>add(10)(20)
+30
+these type of functions are known as curried function, name curry comes from scientist haskell curry.
+
+a)function taking function as arguement.
+
+b)function returning a function.
+
+mathematical function which takes a function as parameter?
+a)diffrential: d/dx(f)
+
+b)integration: higher order operation in math.
+area-> summation, definite integral of a function f between limits a and b.
+a=2 b=3
+f(a)*.001               *               *b
+                        a. . . . . . . .
+
+def sqr(x):return x*x
+def integral(f,a,b):
+
+f(a+delta)*delta
+
+Symbolic math is needed for indefinite intgrals.
+
+def sqr(x): return x*x
+def diffrential(f):
+        return lambda x:f(x+.001)-f(x)/.001
+
+g=diffrential(sqr)
+print g(3) ->float 6
+
+function returning  a function, function takes a function as parameter, return another function as result.
+
+diffrential f: limit definition
+f(x+delta_x)-f(x)/delta_x
+delta_x -> 0
+
+after define diffrential function return is a closure.
