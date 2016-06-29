@@ -1,0 +1,116 @@
+Functions Continue..
+--------------------
+Sort,Sorted
+----------
+>>>a=[10,1,2,8]
+>>>a.sort()
+>>>a
+[1,2,8,10]
+>>>
+
+sort() is mutable.
+
+>>>a=[10,1,2,8]
+>>>sorted(a)
+[1,2,8,10]
+>>> a
+[10, 1, 2, 8]
+>>>
+
+sorted() is immutable.
+
+what if you want to store more complex data structures?
+
+>>>s=[("abc",10),("def",3)] -> tuple sorting
+>>>sorted(s,key= lambda x:x[1])
+[("def",3),("abc",10)]
+
+steps for sorting -> comparison,exchange
+
+compare return value. Syntax for soted() -> sorted(iterable,cmp=None,key=None,reverse=False)
+
+for descending sort reverse=True
+
+>>>sorted(["pqr","abc"]) -> String sorting
+>>>['abc','pqr']
+
+>>>'abc'<'def'
+True
+
+sorted by dictionary order.
+>>>sorted(["abc","p","qr"])
+['abc','p','qr']
+
+>>>sorted(["abc","p","qr"],key=lambda x:len(x)) -> order by size
+['p','qr','abc']
+
+we can rewrite above code by simple way:
+
+>>>sorted(["abc","p","qr"],key=len)
+['p','qr','abc']
+
+abstraction -> hiding inner details, simplfication.
+
+functions -> abstraction mechanism, fundamental mechanism. Captures patterns in your code in an elegant way.
+
+a=x*x*x
+-------
+-------
+b=y*y*y
+-------
+-------
+c=z*z*z
+-------
+-------
+here same pattern of code is used 3 times, to avoid duplcation we use abstract fucntions.
+
+def cube(x):return x*x*x
+
+a=cube(x)
+--------
+--------
+b=cube(y)
+--------
+--------
+c=cube(z)
+
+DRY -> Don't Repeat Yourself.
+pypgm1:
+def sum(a, b):
+    s = 0
+    while (a <= b):
+        s = s + a
+        a = a + 1
+    return s
+
+def sum_squares(a, b):
+    s = 0
+    while (a <= b):
+        s = s + a*a
+        a = a + 1
+    return s
+
+def sum_cubes(a, b):
+    s = 0
+    while (a <= b):
+        s = s + a*a*a
+        a = a + 1
+    return s
+
+def sum_odd_cubes(a, b):
+    s = 0
+    while (a <= b):
+        s = s + a*a*a
+        a = a + 2
+    return s
+
+def sum_pi_series(a, b):
+    s = 0
+    while(a <= b):
+        s = s + 1.0/(a * (a+2))
+        a = a + 4
+    return s
+
+print sum_pi_series(1, 1000)
+
+we can reduce these code to a single function.
