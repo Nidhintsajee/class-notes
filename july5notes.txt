@@ -1,1 +1,116 @@
+Test2 discussion continues...
+==========================
+>>> 2**32
+4294967296
+>>> 2**33
+8589934592
+>>> 2**350
+2293498615990071511610820895302086940796564989168281123737588839386922876088484808070018553110125686554624L
+>>> 
 
+Python uses bignum representation, so no over flow problem here.
+Bitwise operators: &,|,^,>>,<<,~
+--------------------------------
+>>>~0
+-1
+0 -> 1111....11
+
+>>>hex(~0)
+-0x1
+
+------------
+| >>1 = /2 |
+| <<1 = *2 |
+------------
+
+11111111 (-1)
+11111110 (-2) >> 1
+01111111
+  or		2 assumptions
+11111111 (-1)
+
+"bit twiddling":A piece of source code that does bit twiddling, which may mean: Doing bit manipulation; Interacting with computer hardware, 
+
+especially when using a bit-banging technique; Reading or writing binary file formats; or Being unnecessarily complex, perhaps due to 
+
+premature optimization.
+
+"hakers delight":Hacker's Delight by Henry S. Warren, Jr., is a book published by Addison-Wesley Professional on 17 July 2002. It discusses 
+
+a variety of programming algorithms for common tasks involving integer types, often with the aim of performing the minimum number of 
+
+operations or replacing slow operations by faster ones (e.g., converting a divide by a constant into a multiply by another constant that 
+
+gives the same result).
+
+population count to count no.of ones.
+
+Population count may refer to: Hamming weight, the number of non-zero entries ('1' bits) in a byte, string, word, array or other similar 
+
+data structure.
+
+pgm to count no.of ones in a decimal:
+s=0;
+while(x!=0)
+{
+s=s+(x&1);
+x=x>>1;
+}
+
+Time complexity of above pgm:O(N) -> linear in N
+
+another simple method to calculate this:
+x&(x-1)
+
+      x=1011000
+    x-1=1010111
+x&(x-1)=1010000
+
+O(M) sparse vector, here counting ones in 3 steps.
+
+here we develop a performance sensitive code.
+
+A,Nbits,starting from mth position
+N=3
+M=4
+     ----
+1011|010|11 
+    -----
+in python 2
+
+>>> zip([1,2,3],[4,5,6])
+[(1, 4), (2, 5), (3, 6)]
+>>> a=zip([1,2,3],[4,5,6])
+>>> for x in a:
+...     print x
+... 
+(1, 4)
+(2, 5)
+(3, 6)
+>>> for x in a:
+...     print x
+... 
+(1, 4)
+(2, 5)
+(3, 6)
+>>> 
+
+for loop can do many times.
+in python 3
+
+>>> zip([1,2,3],[4,5,6])
+<zip object at 0x7f60d56dbf48>
+>>> a=zip([1,2,3],[4,5,6])
+>>> for x in a:
+...     print (x)
+... 
+(1, 4)
+(2, 5)
+(3, 6)
+>>> for x in a:
+...     print (x)
+... 
+>>> 
+for loop can do only once otherwise empty, "consumed"-then we don't get that.
+
+so 2nd for loop immediatly gone.a is empty iterable, dictionaries are unorder.
