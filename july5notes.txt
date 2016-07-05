@@ -114,3 +114,4 @@ in python 3
 for loop can do only once otherwise empty, "consumed"-then we don't get that.
 
 so 2nd for loop immediatly gone.a is empty iterable, dictionaries are unorder.
+
