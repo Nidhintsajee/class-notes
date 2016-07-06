@@ -1,1 +1,252 @@
+imgpuzzle,  math,  networking,  regexp,  rpi,  subprocess
+=========================================================
+sub process - run external commands
+-----------
+1.py
+import subprocess
+
+r = subprocess.call(["echo", "hello"])
+
+print r
+
+o/p -> 
+hello
+0
+
+2.py - display image
+
+#Use subprocess.call to view rms.jpg
+#using the `eog' command.
+
+import subprocess
+subprocess.call("ego","rms.jpg") 
+
+Regular Expression
+------------------
+Theory of automata, finite state of machines, from these regular expressions evolved.They describe textual patterns.
+
+eg: emailid -> ....@.....(.).....
+
+Regular expressions(re) are extreamly tricky.
+
+1.py:
+import re
+
+s1 = 'this is a nice line!'
+
+pat1 = 'nice'
+
+#pattern is matched - returns a "match object"
+
+print re.search(pat1, s1)
+
+o/p: <_sre.SRE_Match object at 0x7fa621617bf8>
+
+this means match is successfull.
+2.py:
+import re
+
+s1 = 'this is a nice line!'
+
+pat1 = 'nicely'
+
+# pattern is NOT matched, function returns None
+print re.search(pat1, s1)
+
+o/p: None 
+
+return when no match is found.
+
+3.py:
+import re
+
+s1 = 'this is a nice line!'
+
+pat1 = r'^is'
+
+print re.search(pat1, s1)
+
+o/p:None
+
+r means rawstring, search is a function.
+
+4.py:							
+import re														
+						
+s1 = 'this is a nice line!'				
+							
+pat1 = r'^this'						
+							
+print re.search(pat1, s1)					
+							
+o/p: <_sre.SRE_Match object at 0x7f9933460bf8>
+
+5.py:
+import re
+
+s1 = 'this is a nice line'
+
+pat1 = r'line$'
+
+print re.search(pat1, s1)
+
+o/p:<_sre.SRE_Match object at 0x7ff2876e4bf8>
+
+6.py:
+import re
+
+s1 = 'this is a nice line'
+
+pat1 = r'nice$'
+
+print re.search(pat1, s1)
+
+o/p:None
+
+7.py:
+import re
+
+s1 = 'this is a nice line'
+
+pat1 = r'n..e'
+
+r = re.search(pat1, s1)
+
+if r:
+    print r.group()
+
+o/p:nice
+
+8.py:
+import re
+
+s1 = 'this is a nice line'
+
+pat1 = r'n...e'
+
+r = re.search(pat1, s1)
+
+if r:
+    print r.group()
+
+o/p:
+9.py:
+import re
+
+s1 = 'this is a niiice line'
+
+pat1 = r'ni+'
+
+r = re.search(pat1, s1)
+
+if r:
+    print r.group()
+
+o/p:niii
+
+10.py:
+import re
+
+s1 = 'this is a niiice line'
+
+pat1 = r'i+'
+
+r = re.search(pat1, s1)
+
+if r:
+    print r.group()
+
+o/p:i
+
+^i+ -more than one occurance.
+
+"rematching is greedy, but no delayed gratification", greedy -> match longest possible string.
+11.py:
+import re
+
+s1 = 'this is a niiice line'
+
+pat1 = r'i+s'
+
+r = re.search(pat1, s1)
+
+if r:
+    print r.group()
+
+o/p:is
+
+p=re.search(r'i+','abciiiide')
+p,group()
+
+o/p:'iiii'
+
+12.py:
+import re
+
+s1 = 'this is a niiice line'
+
+pat1 = r't*s'
+
+r = re.search(pat1, s1)
+
+if r:
+    print r.group()
+
+o/p:s
+
+t* - zero or more occure.
+13.py:
+import re
+
+s1 = 'My number: 98913487. Please do not call'
+
+pat1 = r'\d+'
+
+#\d matches single occurrence of a decimal digit (0, 1, ... 9)
+r = re.search(pat1, s1)
+
+if r:
+    print r.group()
+
+o/p:98913487
+
+r'\d+' - one or more occurances.
+
+14.py:
+import re
+
+s1 = '1296:2356'
+
+pat1 = r'(\d+):(\d+)'
+
+#\d matches single occurrence of a decimal digit (0, 1, ... 9)
+r = re.search(pat1, s1)
+
+if r:
+    print r.group()
+    print r.group(1)
+    print r.group(2)
+
+o/p:1296:2356
+1296
+2356
+
+15.py:
+import re
+
+s1 = 'This number, 12389 and also this one 7819, one more 765413'
+
+pat1 = r'\d+'
+
+#\d matches single occurrence of a decimal digit (0, 1, ... 9)
+r = re.findall(pat1, s1)
+
+print r
+
+o/p: ['12389', '7819', '765413']
+
+Regular expressions are *very* tricky!, Use them with caution. For very simple substring searching, don't use regexps,
+
+simply use "find" method on strings. After java python is popular in libraries.
+
 
