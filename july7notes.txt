@@ -1,1 +1,98 @@
+TCP/IP Networking
+=================
+a) What is TCP/IP?
 
+TCP/IP (Transmission Control Protocol/Internet Protocol) is the basic communication language or protocol of the Internet. It can also be 
+
+used as a communications protocol in a private network (either an intranet or an extranet).
+
+b) What is protocol?
+
+The TCP/IP Internet protocols, a common example, consist of: Transmission Control Protocol (TCP), which uses a set of rules to exchange 
+
+messages with other Internet points at the information packet level. Internet Protocol (IP), which uses a set of rules to send and receive 
+
+messages at the Internet address level. Gateways/router is coonection between client and server.
+
+traceroute : It is a command which can show you the path a packet of information takes from your computer to one you specify. It will list 
+
+all the routers it passes through until it reaches its destination, or fails to and is discarded. In addition to this, it will tell you how 
+
+long each 'hop' from router to router takes.
+
+$ traceroute gnu.org
+traceroute to gnu.org (208.118.235.148), 30 hops max, 60 byte packets
+ 1  192.168.1.1 (192.168.1.1)  8.637 ms  8.005 ms  7.972 ms
+ 2  117.204.112.1 (117.204.112.1)  25.642 ms  28.038 ms  31.885 ms
+ 3  218.248.173.122 (218.248.173.122)  32.779 ms  36.029 ms  38.705 ms
+ 4  * 218.248.235.162 (218.248.235.162)  58.470 ms  60.152 ms
+ 5  125.17.180.233 (125.17.180.233)  63.334 ms  66.534 ms  71.196 ms
+ 6  203.101.100.170 (203.101.100.170)  209.166 ms 182.79.247.217 (182.79.247.217)  176.108 ms 182.79.245.18 (182.79.245.18)  174.917 ms
+ 7  * * *
+ 8  * * * 
+
+long list. we got ip address, very complex job from client to destination.
+
+c) Protocol is basically some kind of code which manages data transfer from a .
+
+d) You can actually see the code of network in kernel, it is the part of os kernel.
+
+kernel.org - we can download various versions. "Linux kernel cross refernce" we can see codes by web pages in c code.
+
+e) What is an Ip address?
+
+An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer 
+
+network that uses the Internet Protocol for communication. An IP address serves two principal functions: host or network interface 
+
+identification and location addressing.The Internet Protocol version 4 (IPv4) is a protocol for use on packet-switched Link Layer networks 
+
+(e.g. Ethernet). IPv4 provides an addressing capability of approximately 4.3 billion addresses. The Internet Protocol version 6 (IPv6) is 
+
+more advanced and has better features compared to IPv4.
+
+The following table lists the important differences between IPv4 and IPv6.
+
+		IPv4						IPv6	
+------------------------------------------------------------------------------------------------------------------
+*IPv4 addresses are 32 bit length.		*IPv6 addresses are 128 bit length.
+
+*IPv4 addresses are binary numbers 
+represented in decimals.			*IPv6 addresses are binary numbers represented in hexadecimals.
+
+*IPSec support is only optional.		*Inbuilt IPSec support.
+
+*Fragmentation is done by sender and 
+forwarding routers.				*Fragmentation is done only by sender.
+
+*No packet flow identification.			*Packet flow identification is available within the IPv6 header using 
+						 the Flow Label field.
+
+*Checksum field is available in IPv4 header	*No checksum field in IPv6 header.
+
+*Options fields are available in IPv4 header.	*No option fields, but IPv6 Extension headers are available.
+
+*Address Resolution Protocol (ARP) is available
+ to map IPv4 addresses to MAC addresses.	*Address Resolution Protocol (ARP) is replaced with a function of 
+						 Neighbor Discovery Protocol (NDP).
+*Internet Group Management Protocol (IGMP) is
+ used to manage multicast group membership.	*IGMP is replaced with Multicast Listener Discovery (MLD) messages.
+
+*Broadcast messages are available.		*Broadcast messages are not available. Instead a link-local scope "All nodes" 
+						 multicast IPv6 address (FF02::1) is used for broadcast similar functionality.
+*Manual configuration (Static) of IPv4 
+addresses or DHCP (Dynamic configuration) is 
+required to configure IPv4 addresses.		*Auto-configuration of addresses is available.
+---------------------------------------------------------------------------------------------------------------------------
+
+f) client/server
+
+A--B, Client ->which starts communicate first
+ 
+g)Client has to know the address of server at very beggining itself.
+
+h)IP address identifies a machine, programs running machines.
+
+i)How do you identify one particular program
+
+"port numbers"(integer values)
