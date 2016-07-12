@@ -1,1 +1,117 @@
+Math
+====
+Plotting-fourier
+----------------
+1.py:
+
+a = [1,2,3]
+
+print a+1
+
+o/p: Traceback (most recent call last):
+  File "1.py", line 4, in <module>
+    print a+1
+TypeError: can only concatenate list (not "int") to list
+
+2.py: 
+from pylab import *
+
+a = array([1,2,3])
+
+print a + 1
+
+print a * 2
+
+print 2**a
+
+print 1.0/a
+
+
+o/p:	[2 3 4]	
+	[2 4 6]
+	[2 4 8]
+[ 1.          0.5         0.33333333]
+
+do in one step, broadcast.matlab - matrix multiplication tools.
+
+3.py: 
+from pylab import *
+
+a = array([0, pi/2, pi])
+
+print sin(a)
+
+o/p:[  0.00000000e+00   1.00000000e+00   1.22464680e-16]
+4.py:
+
+from pylab import *
+
+a = linspace(0, 1, 10)
+
+print a
+
+print len(a)
+
+o/p:[ 0.          0.11111111  0.22222222  0.33333333  0.44444444  0.55555556  0.66666667  0.77777778  0.88888889  1.        ]
+10
+
+5.py: 
+
+from pylab import *
+
+x = linspace(0, 2*pi, 200)
+y = sin(x)
+
+plot(x, y)
+
+show()
+
+o/p:then a figure is displayed
+
+y=sin(x) -> only real nos
+
+plot(x,y) -> returns object
+
+numeric computation for python , high performance computing, here use bridge python -> c,c++,fortran.
+
+FFI(foreighn function interface), machiene learning -> linear algebra- matrices..
+
+6.py: 
+
+from pylab import *
+
+x = linspace(0, 2*pi, 200)
+y = sin(x) + (1.0/3)*sin(3*x) + (1.0/5)*sin(5*x)
+
+plot(x, y)
+
+show()
+
+o/p:another figure is displyed
+
+Fourier series, periodic signal ->communication, signal processing. multimedia -> important technology.
+
+square wave:7.py:
+from pylab import *
+
+x = linspace(0, 2*pi, 200)
+
+y=sin(x)
+
+i=3
+
+n=0
+
+while(n<100):
+
+    y=y+(1.0/i)*sin(i*x)
+    i=i+2
+    n=n+1
+
+plot(x, y)
+
+show()
+
+o/p: figure is displayed
+imgpuzzle exercise
 
