@@ -1,1 +1,238 @@
+Exceptions
+----------
+"Unusual, extraordinary"
+
+1.py:
+a = 1/0
+o/p : Traceback (most recent call last):
+  File "1.py", line 1, in <module>
+    a = 1/0
+2.py:
+def fun():
+    print 'before ...'
+    a = 1/0
+    print 'after ...'
+    
+fun()
+
+o/p : before ...
+Traceback (most recent call last):
+  File "2.py", line 8, in <module>
+    fun()
+  File "2.py", line 4, in fun
+    a = 1/0
+ZeroDivisionError: integer division or modulo by zero
+
+3.py: 
+
+def fun():
+    print 'before ...'
+    try:
+        a = 1/0
+    except:
+        print 'caught ...'
+
+
+fun()
+
+o/p:
+before ...
+caught ...
+
+5.py: 
+
+def fun2():
+    print 'beginning of fun2 ...'
+    try:
+        a = 1/0
+    except:
+        print 'caught ...'
+
+    print 'at the end of fun2 ...'
+
+def fun1():
+    fun2()
+
+fun1()
+
+o/p:beginning of fun2 ...
+caught ...
+at the end of fun2 ...
+
+6.py:
+
+def fun2():
+    print 'beginning of fun2 ...'
+    a = 1/0
+    print 'at the end of fun2 ...'
+
+def fun1():
+    print 'beginning of fun1 ...'
+    try:
+        fun2()
+    except:
+        print 'caught in fun1 ...'
+
+    print 'at the end of fun1 ...'
+
+
+fun1()
+
+o/p:
+beginning of fun1 ...
+beginning of fun2 ...
+caught in fun1 ...
+at the end of fun1 ...
+propage exception back to the caller.
+
+8.py 
+
+def fun3():
+    print 'beginning of fun3 ...'
+    a = 1/0
+    print 'at the end of fun3 ...'
+
+def fun2():
+    print 'beginning of fun2 ...'
+    fun3()
+    print 'at the end of fun2 ...'
+    
+def fun1():
+    print 'beginning of fun1 ...'
+    fun2()
+    print 'at the end of fun1 ...'
+
+
+fun1()
+
+o/p:beginning of fun1 ...
+beginning of fun2 ...
+beginning of fun3 ...
+Traceback (most recent call last):
+  File "8.py", line 18, in <module>
+    fun1()
+  File "8.py", line 14, in fun1
+    fun2()
+  File "8.py", line 9, in fun2
+    fun3()
+  File "8.py", line 4, in fun3
+    a = 1/0
+ZeroDivisionError: integer division or modulo by zero
+
+we have reached toplevel, backtrace, stacktrace, debugging output;tool gdb(gnu debugger)
+A finally clause is always executed before leaving the try statement, whether an exception has occurred or not. When an exception has occurred in the try clause and has not been handled by an except clause (or it has occurred in an except or else clause), it is re-raised after the finally clause has been executed. The finally clause is also executed “on the way out” when any other clause of the try statement is left via a break, continue or return statement. A more complicated example (having except and finally clauses in the same try statement works as of Python 2.5):
+
+>>>
+>>> def divide(x, y):
+...     try:
+...         result = x / y
+...     except ZeroDivisionError:
+...         print "division by zero!"
+...     else:
+...         print "result is", result
+...     finally:
+...         print "executing finally clause"
+...
+>>> divide(2, 1)
+result is 2
+executing finally clause
+>>> divide(2, 0)
+division by zero!
+executing finally clause
+>>> divide("2", "1")
+executing finally clause
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+  File "<stdin>", line 3, in divide
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
+
+As you can see, the finally clause is executed in any event. The TypeError raised by dividing two strings is not handled by the except clause and therefore re-raised after the finally clause has been executed.
+
+In real world applications, the finally clause is useful for releasing external resources (such as files or network connections), regardless of whether the use of the resource was successful.
+
+Diffrent types of errors
+------------------------
+>>>a = k
+Traceback (most recent call last):
+  File "9.py", line 2, in <module>
+    a = k
+NameError: name 'k' is not defined
+
+>>>f = open('does-not-exist.txt')
+Traceback (most recent call last):
+  File "10.py", line 2, in <module>
+    f = open('does-not-exist.txt')
+IOError: [Errno 2] No such file or directory: 'does-not-exist.txt'
+
+>>>a = [1, 100]
+>>>print a[2]
+Traceback (most recent call last):
+  File "11.py", line 4, in <module>
+    print a[2]
+IndexError: list index out of range
+12.py:
+
+try:
+    a = 1/0
+except NameError:
+    print 'symbol does not exist'
+except ZeroDivisionError:
+    print 'divide by zero error'
+
+o/p:divide by zero error
+
+ 13.py
+
+try:
+    a = b
+except NameError:
+    print 'symbol does not exist'
+except ZeroDivisionError:
+    print 'divide by zero error'
+
+o/p:symbol does not exist
+
+15.py
+
+try:
+    a = 1/0
+except (NameError, ZeroDivisionError):
+    print 'divide by zero or symbol not defined error'
+
+o/p:divide by zero or symbol not defined error
+
+16.py
+a = []
+try:
+    print a[0] 
+except (NameError, ZeroDivisionError):
+    print 'divide by zero or symbol not defined error'
+
+o/p:Traceback (most recent call last):
+  File "16.py", line 3, in <module>
+    print a[0] 
+IndexError: list index out of range
+
+ 17.py
+
+try:
+    a = 1/0
+except ZeroDivisionError:
+    print 'caught division by zero error'
+else:
+    print 'else ...'
+
+o/p:caught division by zero error
+
+python is an object oriented language, java almost pure oop, python not a pure oop, python is a multi paradigm language.
+
+a)imperative language, assembly laguage, c
+a=0
+a=a+1
+
+b)Functional programing
+map(lambada x:x*x,[1,2,3,4])
+declarative
+
+c)Classes, objects -> oop
 
