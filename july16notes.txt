@@ -1,1 +1,223 @@
+Object oriented programing
+--------------------------
+Python is multiparadigm language, small scripts -> don't really make use of oop features.
+
+1.py: 
+
+student1 = ('John', 20, 100)
+student2 = ('Ram', 19, 120)
+student3 = ('Joseph', 21, 340)
+
+# return student whose rank is better
+def higher_rank(a, b):
+    if a[2] < b[2]:
+        return a
+    else:
+        return b
+
+
+print higher_rank(student1, student2)
+
+o/p:('John', 20, 100)
+
+2.py :
+
+student1 = ('John', 20, 100)
+student2 = ('Ram', 19, 120)
+student3 = ('Joseph', 21, 340)
+
+# return student whose rank is better
+# buggy!
+
+def higher_rank(a, b):
+    if a[1] < b[1]:
+        return a
+    else:
+        return b
+
+
+print higher_rank(student1, student2)
+
+o/p:('Ram', 19, 120)
+here it is buggy."brittle code", dictionary is better than tuple, readablity is important.
+
+3.py 
+
+student1 = {'name':'John', 'age':20, 'rank':100}
+student2 = {'name':'Ram', 'age':19, 'rank':120}
+student3 = {'name':'Joseph', 'age':21, 'rank':340}
+
+# return student whose rank is better
+
+def higher_rank(a, b):
+    if a['rank'] < b['rank']:
+        return a
+    else:
+        return b
+
+
+print higher_rank(student1, student2)
+o/p:{'age': 20, 'name': 'John', 'rank': 100}
+
+data is represented, begginers often tend to focus on code, way data is organised, data structuring, data  modelling.
+
+4.py 
+
+def new_student(name, age, rank):
+    return {'name' : name, 'age' : age, 'rank' : rank}
+
+student1 = new_student('John', 20, 100)
+student2 = new_student('Ram', 19, 120)
+student3 = new_student('Joseph', 21, 340)
+
+# return student whose rank is better
+
+def higher_rank(a, b):
+    if a['rank'] < b['rank']:
+        return a
+    else:
+        return b
+
+
+print higher_rank(student1, student2)
+o/p:{'age': 20, 'name': 'John', 'rank': 100}
+
+object oriented programming as a sofisticated way to model costructor function.
+
+class
+-----
+ 5.py: 
+
+class Student:
+    pass
+
+
+student1 = Student()
+student1.name = 'John'
+student1.age = 20
+student1.rank = 100
+
+student2 = Student()
+student2.name = 'Ram'
+student2.age = 19
+student2.rank = 120
+
+
+# return student whose rank is better
+
+def higher_rank(a, b):
+    if a.rank < b.rank:
+        return a
+    else:
+        return b
+
+
+s = higher_rank(student1, student2)
+print s.name, s.age, s.rank
+
+o/p:John 20 100
+
+6.py 
+
+class Student:
+    pass
+
+def new_student(name, age, rank):
+    s = Student()
+    s.name = name
+    s.age = age
+    s.rank = rank
+    return s
+
+student1 = new_student('John', 20, 100)
+
+student2 = new_student('Ram', 19, 120)
+
+
+# return student whose rank is better
+
+def higher_rank(a, b):
+    if a.rank < b.rank:
+        return a
+    else:
+        return b
+
+
+s = higher_rank(student1, student2)
+print s.name, s.age, s.rank
+
+o/p:John 20 100
+
+s -> an object of the type student. s is also called instance.
+s.name='john'
+field, attribute "." operator
+
+represent complex data in your program, you can very well manage with a dict. class can do more copmlicated functions than dict.
+
+ 7.py 
+
+#def new_student(name, age, rank):
+#    s = Student()
+#    s.name = name
+#    s.age = age
+#    s.rank = rank
+#    return s
+
+
+class Student:
+    def __init__(s, name, age, rank):
+        s.name = name
+        s.age = age
+        s.rank = rank
+
+student1 = Student('John', 20, 100)
+
+student2 = Student('Ram', 19, 120)
+
+
+# return student whose rank is better
+
+def higher_rank(a, b):
+    if a.rank < b.rank:
+        return a
+    else:
+        return b
+
+
+s = higher_rank(student1, student2)
+print s.name, s.age, s.rank
+
+o/p:John 20 100
+
+methods, meber functions in a class, you can define functions within a class __init__ constructor function.
+
+8.py 
+
+class Student:
+    def __init__(self, name, age, rank):
+        self.name = name
+        self.age = age
+        self.rank = rank
+
+student1 = Student('John', 20, 100)
+
+student2 = Student('Ram', 19, 120)
+
+
+# return student whose rank is better
+
+def higher_rank(a, b):
+    if a.rank < b.rank:
+        return a
+    else:
+        return b
+
+
+s = higher_rank(student1, student2)
+print s.name, s.age, s.rank
+
+o/p:John 20 100
+
+self -> it is a convension.
+
 
