@@ -66,7 +66,7 @@ plot(x, y)
 
 show()
 
-o/p:then a figure is displayed
+o/p:then a figure is displayed figure_1.png
 
 y=sin(x) -> only real nos
 
@@ -87,7 +87,7 @@ plot(x, y)
 
 show()
 
-o/p:another figure is displyed
+o/p:another figure is displyed figure_2.png
 
 Fourier series, periodic signal ->communication, signal processing. multimedia -> important technology.
 
@@ -112,6 +112,6 @@ plot(x, y)
 
 show()
 
-o/p: figure is displayed
+o/p: figure is displayed figure_3.png	
 imgpuzzle exercise
 
