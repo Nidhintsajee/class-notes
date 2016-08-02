@@ -191,3 +191,61 @@ print check_balance(acc1)
 acc2 = Account()
 deposit(acc2, 200)
 print check_balance(acc2)
+
+o/p:
+1100
+200
+
+8.py
+class Account:
+    def __init__(self, balance=0):
+        self.balance = balance
+
+    def deposit(self, amt):
+        self.balance += amt
+
+    def withdraw(self, amt):
+        self.balance -= amt
+
+    def check_balance(self):
+        return self.balance
+
+acc1 = Account(1000)
+acc1.deposit(100)
+print acc1.check_balance()
+
+acc2 = Account()
+acc2.deposit(200)
+print acc2.check_balance()
+
+o/p:
+1100
+200
+100.py
+class Account:
+    def __init__(self):
+        self.balance = 0
+    
+    def withdraw(self, amount):
+        self.balance -= amount
+        
+    def deposit(self, amount):
+        self.balance += amount
+
+ 
+    def check_balance(self):
+        return self.balance
+
+
+acc1 = Account()
+acc1.deposit(100)
+print acc1.check_balance()
+
+acc2 = Account()
+acc2.deposit(200)
+print acc2.check_balance()
+
+o/p:
+100
+200
+
