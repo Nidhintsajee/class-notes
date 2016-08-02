@@ -1,1 +1,193 @@
+1.py
+balance = 1000
 
+def deposit(amount):
+    global balance
+    balance += amount
+
+def withdraw(amount):
+    global balance
+    balance -= amount
+
+def check_balance():
+    return balance
+
+deposit(100)
+print check_balance()
+
+withdraw(200)
+print check_balance()
+
+o/p:
+1100
+900
+
+ 2.py
+
+def new_account():
+    return {'balance' : 0}
+
+def deposit(account, amount):
+    account['balance'] += amount
+
+def withdraw(account, amount):
+    account['balance'] -= amount
+
+def check_balance(account):
+    return account['balance']
+
+
+acc1 = new_account()
+print acc1
+
+deposit(acc1, 100)
+print acc1
+
+acc2 = new_account()
+print acc2
+
+deposit(acc2, 200)
+print acc2
+
+o/p:{'balance': 0}
+{'balance': 100}
+{'balance': 0}
+{'balance': 200}
+
+3.py
+class Account:
+    pass
+
+def new_account():
+    a = Account()
+    a.balance = 0
+    return a
+
+def deposit(acct, amt):
+    acct.balance += amt
+
+def withdraw(acct, amt):
+    acct.balance -= amt
+
+def check_balance(acct):
+    return acct.balance
+
+acc1 = new_account()
+deposit(acc1, 100)
+print check_balance(acc1)
+
+acc2 = new_account()
+deposit(acc2, 200)
+print check_balance(acc2)
+
+o/p:
+100
+200
+ 4.py
+class Account:
+    def __init__(self):
+        self.balance = 0
+
+def deposit(acct, amt):
+    acct.balance += amt
+
+def withdraw(acct, amt):
+    acct.balance -= amt
+
+def check_balance(acct):
+    return acct.balance
+
+acc1 = Account()
+deposit(acc1, 100)
+print check_balance(acc1)
+
+acc2 = Account()
+deposit(acc2, 200)
+print check_balance(acc2)
+
+o/p:
+100
+200
+
+5.py
+
+#def new_account():
+#    a = Account()
+#    a.balance = 0
+#    return a
+
+
+class Account:
+    def __init__(self, balance):
+        self.balance = balance
+
+def deposit(acct, amt):
+    acct.balance += amt
+
+def withdraw(acct, amt):
+    acct.balance -= amt
+
+def check_balance(acct):
+    return acct.balance
+
+acc1 = Account(1000)
+deposit(acc1, 100)
+print check_balance(acc1)
+
+acc2 = Account(500)
+deposit(acc2, 200)
+print check_balance(acc2)
+
+o/p:
+1100
+700
+
+6.py
+class Account:
+    def __init__(self, balance):
+        self.balance = balance
+
+def deposit(acct, amt):
+    acct.balance += amt
+
+def withdraw(acct, amt):
+    acct.balance -= amt
+
+def check_balance(acct):
+    return acct.balance
+
+acc1 = Account(1000)
+deposit(acc1, 100)
+print check_balance(acc1)
+
+acc2 = Account()
+deposit(acc2, 200)
+print check_balance(acc2)
+
+o/p:1100
+Traceback (most recent call last):
+  File "6.py", line 18, in <module>
+    acc2 = Account()
+TypeError: __init__() takes exactly 2 arguments (1 given)
+
+ 7.py
+class Account:
+    def __init__(self, balance=0):
+        self.balance = balance
+
+def deposit(acct, amt):
+    acct.balance += amt
+
+def withdraw(acct, amt):
+    acct.balance -= amt
+
+def check_balance(acct):
+    return acct.balance
+
+acc1 = Account(1000)
+deposit(acc1, 100)
+print check_balance(acc1)
+
+acc2 = Account()
+deposit(acc2, 200)
+print check_balance(acc2)
