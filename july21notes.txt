@@ -120,3 +120,14 @@ acc1.withdraw(200)
 o/p:
 Balance is only 100
 Can not withdraw 200
+
+it should not be misused use of multiple inheritance is highly discouraged.
+
+OO AD:UML -> Unified Modelling Language.
+
+OO 1980 -> GUI
+
+OO design maps very well to this problem do main(GUI's)
+
+Complier design: Cprocedural electronic circuit simulation, digital circuit simulation.
+
