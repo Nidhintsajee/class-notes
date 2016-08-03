@@ -1,1 +1,68 @@
+Regular expression
+------------------
+'\s+$' \s ->space
 
+Dos :Denial of service attack.
+
+O O Programming
+---------------
+a)Compositioning: has A relationship
+
+b)Inheritance: Is A relationship
+
+combine classes/objects -> more complexstuff
+
+Hoe do you combine?
+
+*real world entities, "modelling" account, real world entities will often be related to each other.
+
+class encapsulate brings together data.
+
+Inheritance
+-----------
+1.py 
+
+class Foo:
+  def fun1(self):
+    print 'Foo: fun1'
+
+class Bar:
+  def fun2(self):
+    print 'Bar: fun2'
+
+b = Bar()
+b.fun2()
+
+o/p:Bar: fun2
+
+2.py 
+
+class Foo:
+  def fun1(self):
+    print 'Foo: fun1'
+
+class Bar:
+  def fun2(self):
+    print 'Bar: fun2'
+
+b = Bar()
+b.fun1()
+
+o/p:
+Traceback (most recent call last):
+  File "2.py", line 11, in <module>
+    b.fun1()
+AttributeError: Bar instance has no attribute 'fun1'
+
+3.py 
+
+class Foo:
+  def fun1(self):
+    print 'Foo: fun1'
+
+class Bar(Foo):
+  def fun2(self):
+    print 'Bar: fun2'
+
+b = Bar()
+b.fun1()
