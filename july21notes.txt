@@ -66,3 +66,57 @@ class Bar(Foo):
 
 b = Bar()
 b.fun1()
+
+o/p:
+Foo: fun1
+
+4.py 
+
+class Foo:
+    def fun1(self):
+        print 'Foo: fun1'
+
+    def fun2(self):
+        print 'Foo: fun2'
+
+class Bar(Foo):
+    def fun1(self):
+        print 'Bar: fun1'
+
+b = Bar()
+b.fun1()
+b.fun2()
+
+o/p:
+Bar: fun1
+Foo: fun2
+
+5.py 
+
+class Account:
+    def __init__(self, balance=0):
+        self.balance = balance
+
+    def deposit(self, amt):
+        self.balance += amt
+
+    def withdraw(self, amt):
+        self.balance -= amt
+
+    def check_balance(self):
+        return self.balance
+
+class LimitedAccount(Account):
+    def withdraw(self, amt):
+        if (self.balance - amt) < 0:
+            print 'Balance is only %d' % self.balance
+            print 'Can not withdraw %d' % amt  
+        else:
+            self.balance -= amt
+
+acc1 = LimitedAccount(100)
+acc1.withdraw(200)
+
+o/p:
+Balance is only 100
+Can not withdraw 200
