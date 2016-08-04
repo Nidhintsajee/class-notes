@@ -84,6 +84,8 @@ new style classes -> it has new features.
 
 duck-typing
 -----------
+Python is a ducktyped language anything which behaves like a duck is a duck.
+
 1.py 
 
 class Duck:
@@ -100,4 +102,60 @@ handle_duck(d)
 
 o/p:Duck: quack quack
 
+2.py 
 
+class Duck:
+    def quack(self):
+        print 'Duck: quack quack'
+
+class LooksLikeADuck:
+    def quack(self):
+        print 'LooksLikeADuck: quack quack'
+
+    def run(self):
+        print 'LooksLikeADuck: run'
+
+
+def handle_duck(d):
+    d.quack()
+
+
+d = LooksLikeADuck()
+handle_duck(d)
+
+o/p:
+LooksLikeADuck: quack quack
+
+exceptions
+-----------
+1.py 
+class MyError(Exception):
+    def __init__(self, value):
+        self.value = value
+    
+def main():
+    try:
+        raise MyError(10)
+    except MyError as e:
+        print 'MyError: value = ', e.value
+
+main()
+
+o/p:
+MyError: value =  10
+
+2.py 
+def divide(x, y):
+    try:
+        result = x / y
+    except ZeroDivisionError:
+        print 'division by zero!'
+    else:
+        print 'result is: ', result
+    finally:
+        print "executing finally clause"
+
+
+divide(6, 2)
+
+o/p:
