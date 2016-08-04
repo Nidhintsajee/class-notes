@@ -1,1 +1,103 @@
+Classes/Objects
+---------------
+a) Inheritance -> is A relationships
+b) Composition -> has A relationships
+
+Inheritance
+----------
+ 1.py 
+class Foo:
+    def __init__(self):
+        print 'Foo: __init__'
+
+class Bar(Foo):
+    pass
+
+b = Bar()
+
+o/p:
+1.py 
+Foo: __init__
+
+2.py 
+class Foo:
+    def __init__(self):
+        print 'Foo: __init__'
+
+class Bar(Foo):
+    def __init__(self):
+        print 'Bar: __init__'
+
+b = Bar()
+
+o/p:
+Bar: __init__
+
+3.py 
+class Foo:
+    def __init__(self):
+        print 'Foo: __init__'
+
+class Bar(Foo):
+    def __init__(self):
+        print 'Bar: __init__'
+        Foo.__init__(self)
+
+b = Bar()
+
+o/p:
+Bar: __init__
+Foo: __init__
+
+ 4.py 
+
+class A:
+    def fun1(self):
+        print 'A: fun1'
+
+class B:
+    def fun2(self):
+        print 'B: fun2'
+
+class C(A, B):
+    def fun3(self):
+        print 'C: fun3'
+
+
+t = C()
+t.fun3()
+t.fun2()
+t.fun1()
+
+o/p:
+C: fun3
+B: fun2
+A: fun1
+
+"Extended attribute lookup mechanism"
+code reuse,MRP ->Method resolution order.
+
+class foo(object):
+  pass
+  
+new style classes -> it has new features.
+
+duck-typing
+-----------
+1.py 
+
+class Duck:
+    def quack(self):
+        print 'Duck: quack quack'
+
+
+def handle_duck(d):
+    d.quack()
+
+
+d = Duck()
+handle_duck(d)
+
+o/p:Duck: quack quack
+
 
